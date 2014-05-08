@@ -1,9 +1,11 @@
 package se.mah.kd330a.project.itsl;
 
 import se.mah.kd330a.project.R;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.AlarmManager;
@@ -14,6 +16,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +25,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.app.FragmentTransaction;
 
@@ -51,6 +56,7 @@ public class FragmentITSL extends Fragment implements
 		Context appContext = getActivity().getApplicationContext();
 		backgroundUpdateIntent = PendingIntent.getService(appContext, 0, new Intent(appContext, TimeAlarm.class), 0);
 		feedManager = new FeedManager(this, appContext);
+		
 	}
 
 	@Override

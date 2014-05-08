@@ -39,7 +39,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="16dp"
-                    android:text="@string/tx_textMain"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/grey_dark" />
 
@@ -71,9 +70,10 @@
                     android:layout_marginBottom="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
-                    android:text="@string/tx_textTwo"
+                    android:text="@string/itsl_help_link"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="@color/grey_dark" />
+                    android:textColor="@color/grey_dark"
+                    android:autoLink="web" />
 
                 <ImageView
                     android:id="@+id/divider_light2"
@@ -91,7 +91,7 @@
                     android:layout_below="@id/divider_light2"
                     android:layout_marginLeft="16dp"
                     android:gravity="center_vertical"
-                    android:text="2. Meet the RSS icon"
+                    android:text="2. Find the RSS icon"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/black" />
 
@@ -133,7 +133,7 @@
                     android:layout_below="@id/divider_light3"
                     android:layout_marginLeft="16dp"
                     android:gravity="center_vertical"
-                    android:text="3. Identify your feeds"
+                    android:text="3. Bookmark your feeds"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/black" />
 
@@ -150,83 +150,10 @@
                     android:textColor="@color/grey_dark" />
 
                 <ImageView
-                    android:id="@+id/im_help2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tx_textFour"
-                    android:layout_centerHorizontal="true"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/im_itsl_help_2" />
-
-                <ImageView
-                    android:id="@+id/divider_light4"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_below="@id/im_help2"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:background="@color/grey_light" />
-
-                <TextView
-                    android:id="@+id/tx_titleFive"
-                    android:layout_width="match_parent"
-                    android:layout_height="46dp"
-                    android:layout_below="@id/divider_light4"
-                    android:layout_marginLeft="16dp"
-                    android:gravity="center_vertical"
-                    android:text="4. Bookmark your feeds"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/black" />
-
-                <TextView
-                    android:id="@+id/tx_textFive"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tx_titleFive"
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:text="@string/tx_textFive"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="@color/grey_dark" />
-
-                <ImageView
-                    android:id="@+id/divider_light5"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_below="@id/tx_textFive"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:background="@color/grey_light" />
-
-                <TextView
-                    android:id="@+id/tx_titleSix"
-                    android:layout_width="match_parent"
-                    android:layout_height="46dp"
-                    android:layout_below="@id/divider_light5"
-                    android:layout_marginLeft="16dp"
-                    android:gravity="center_vertical"
-                    android:text="5. Restart the App"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/black" />
-
-                <TextView
-                    android:id="@+id/tx_textSix"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tx_titleSix"
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:text="@string/tx_textSix"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="@color/grey_dark" />
-
-                <ImageView
                     android:id="@+id/divider_dark"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
-                    android:layout_below="@id/tx_textSix"
+                    android:layout_below="@id/tx_textFour"
                     android:background="@color/grey" />
             </RelativeLayout>
         </LinearLayout>
