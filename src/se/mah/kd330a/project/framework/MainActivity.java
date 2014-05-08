@@ -39,10 +39,12 @@ import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
@@ -173,6 +175,11 @@ public class MainActivity extends FragmentActivity implements Observer{
             Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
             return true;
+        case R.id.action_settings:
+        	LayoutInflater layoutInflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        	//View view = (ViewGroup) layoutInflater.inflate(R.layout.itsl_help, container, false);
+        	//setContentView(view);
+        	
         default:
             return super.onOptionsItemSelected(item);
         }
