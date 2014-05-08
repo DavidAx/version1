@@ -2,8 +2,10 @@ package se.mah.kd330a.project.itsl;
 
 public class GithubTest {
 
-	// Testa sÃ¥ ditt Github fungerar, skriv ditt namn nedanfÃ¶r och commit/pusha det.
+	// Testa så ditt Github fungerar, skriv ditt namn nedanför och commit/pusha det.
 	// David
-	//Erik
-	//Tor
+	// Erik
+	// Tor
+	// Tonny
+	// Jesper
 }

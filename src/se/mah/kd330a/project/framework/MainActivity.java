@@ -22,6 +22,7 @@ import se.mah.kd330a.project.home.FragmentHome;
 import se.mah.kd330a.project.home.data.RSSFeed;
 import se.mah.kd330a.project.itsl.FeedManager;
 import se.mah.kd330a.project.itsl.FragmentITSL;
+import se.mah.kd330a.project.itsl.HelpFragment;
 import se.mah.kd330a.project.schedule.data.KronoxCalendar;
 import se.mah.kd330a.project.schedule.data.KronoxReader;
 import se.mah.kd330a.project.schedule.view.FragmentScheduleWeekPager;
@@ -39,10 +40,12 @@ import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
@@ -172,7 +175,13 @@ public class MainActivity extends FragmentActivity implements Observer{
         case R.id.action_help:
             Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
+            
             return true;
+        case R.id.rss_help:
+        	setContentView(R.layout.itsl_help);
+            
+            return true;
+        	
         default:
             return super.onOptionsItemSelected(item);
         }

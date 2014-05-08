@@ -4,4 +4,11 @@
           android:icon="@drawable/ic_action_profile"
           android:title="@string/action_help"
           android:showAsAction="ifRoom" />
+    <item android:id="@+id/rss_help" 
+          android:icon="@drawable/ic_action_settings" 
+          android:title="RssHelp"
+          android:showAsAction="ifRoom">
+    </item>
+    
+    
 </menu>
