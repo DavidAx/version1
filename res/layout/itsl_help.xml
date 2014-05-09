@@ -156,6 +156,14 @@
                     android:layout_below="@id/tx_textFour"
                     android:background="@color/grey" />
 
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:scaleType="fitStart"
+                    android:layout_below="@id/tx_textFour"
+                    android:src="@drawable/itsl_help_start" />
+
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
