@@ -155,6 +155,7 @@
                     android:layout_height="2dp"
                     android:layout_below="@id/tx_textFour"
                     android:background="@color/grey" />
+
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
