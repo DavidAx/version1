@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+import org.kobjects.util.Strings;
+
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.AlarmManager;
@@ -32,7 +34,8 @@ import android.app.FragmentTransaction;
 public class FragmentOverview extends Fragment implements 
 	FeedManager.FeedManagerDoneListener, 
 	ActionBar.TabListener
-{
+{	
+	private ArrayList<String> titles;
 	private static final String TAG = "FragmentITSL";
 	private static final long UPDATE_INTERVAL = 600000; // every ten minute
 	private static final long INITIAL_START_AFTER = 1000; // one minute
@@ -49,7 +52,7 @@ public class FragmentOverview extends Fragment implements
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-
+		titles = new ArrayList<String>();
 		/*
 		 * Set up the repeating task of updating data in the background 
 		 */
@@ -179,10 +182,16 @@ public class FragmentOverview extends Fragment implements
 			{
 				String[] parts = title.split("-");
 				titleDisp = parts[2].substring(1, parts[2].length() - 1);
+				titles.add(titleDisp);
 			}
 			catch (Exception e)
 			{
 				titleDisp = title;
+			}
+			
+			for(int i = 0; i<titles.size();i++){
+				Log.i("Hejhejhej","Hejhejhej");
+				
 			}
 			
 			actionBar.addTab(
