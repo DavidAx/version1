@@ -21,18 +21,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
-
-                <!--
-                 <TextView
-                android:id="@+id/tx_titleMain"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:gravity="center"
-                android:text="Set up It&apos;s Learning"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/black" />
-                -->
+                android:layout_height="1128dp" >
 
                 <TextView
                     android:id="@+id/tx_textMain"
@@ -51,63 +40,139 @@
                     android:layout_marginRight="16dp"
                     android:background="@color/grey_light" />
 
+                <ImageView
+                    android:id="@+id/ImageView01"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/grey_light" />
+
+                <ImageView
+                    android:id="@+id/divider_light7"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/imageView3"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@color/grey_light" />
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="11dp"
+                    android:src="@drawable/itsl_help_startt" />
+
+                <ImageView
+                    android:id="@+id/divider_light3"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/imageView1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="21dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/grey_light" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/textView3"
+                    android:layout_below="@+id/divider_light3"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:text="3. Open the option menu"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/imageView1"
+                    android:layout_below="@+id/textView2"
+                    android:layout_marginTop="9dp"
+                    android:src="@drawable/itsl_help_bookmm" />
+
+                <ImageView
+                    android:id="@+id/divider_light6"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/imageView2"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/grey_light" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/textView1"
+                    android:layout_below="@+id/divider_light6"
+                    android:layout_marginTop="10dp"
+                    android:text="4. Bookmark the page"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/imageView2"
+                    android:layout_alignParentBottom="true"
+                    android:src="@drawable/itsl_help_savee" />
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/imageView1"
+                    android:layout_below="@+id/divider_light2"
+                    android:layout_marginTop="17dp"
+                    android:text="2. Press the icon"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <TextView
+                    android:id="@+id/tx_textTwoo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/textView1"
+                    android:layout_below="@+id/tx_titleTwo"
+                    android:autoLink="web"
+                    android:text="@string/itsl_help_link"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/grey_dark" />
+
                 <TextView
                     android:id="@+id/tx_titleTwo"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="46dp"
-                    android:layout_below="@id/divider_light"
-                    android:layout_marginLeft="16dp"
+                    android:layout_alignLeft="@+id/tx_textTwoo"
+                    android:layout_below="@+id/divider_light"
                     android:gravity="center_vertical"
                     android:text="1. Go to It&apos;s Learning"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/black" />
 
-                <TextView
-                    android:id="@+id/tx_textTwo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tx_titleTwo"
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:text="@string/itsl_help_link"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="@color/grey_dark"
-                    android:autoLink="web" />
-
                 <ImageView
                     android:id="@+id/divider_light2"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
-                    android:layout_below="@id/tx_textTwo"
+                    android:layout_alignLeft="@+id/divider_light"
+                    android:layout_below="@+id/tx_textTwoo"
+                    android:layout_marginTop="9dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:background="@color/grey_light" />
-                
-                <ImageView
-                    android:id="@+id/divider_light3"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_below="@id/divider_light2"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:background="@color/grey_light" />
-
-                <ImageView
-                    android:id="@+id/divider_dark"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_below="@id/divider_light3"
-                    android:background="@color/grey" />
-
-                <ImageView
-                    android:id="@+id/imageView1"
-                    android:layout_width="match_parent"
-                    android:layout_height="400dp"
-                    android:layout_below="@id/tx_textTwo"
-                    android:src="@drawable/itsl_help_start" />
 
             </RelativeLayout>
+
         </LinearLayout>
     </LinearLayout>
 
