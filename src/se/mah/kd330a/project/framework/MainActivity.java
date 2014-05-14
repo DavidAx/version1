@@ -22,6 +22,7 @@ import se.mah.kd330a.project.home.FragmentHome;
 import se.mah.kd330a.project.home.data.RSSFeed;
 import se.mah.kd330a.project.itsl.FeedManager;
 import se.mah.kd330a.project.itsl.FragmentITSL;
+import se.mah.kd330a.project.itsl.FragmentOverview;
 import se.mah.kd330a.project.itsl.HelpFragment;
 import se.mah.kd330a.project.schedule.data.KronoxCalendar;
 import se.mah.kd330a.project.schedule.data.KronoxReader;
@@ -210,7 +211,7 @@ public class MainActivity extends FragmentActivity implements Observer{
 			transaction.addToBackStack(null);
 			break;
 		case ITSL:
-			fragment = new FragmentITSL();
+			fragment = new FragmentOverview();
 			transaction.addToBackStack(null);
 			break;
 		case FIND:

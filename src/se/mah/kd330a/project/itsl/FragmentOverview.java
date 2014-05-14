@@ -190,7 +190,8 @@ public class FragmentOverview extends Fragment implements
 			}
 			
 			for(int i = 0; i<titles.size();i++){
-				Log.i("Hejhejhej","Hejhejhej");
+				String testtest = titles.get(i);
+				Log.i("Courses",testtest);
 				
 			}
 			
