@@ -190,6 +190,11 @@ public class FragmentITSL extends Fragment implements
 				.setText(" "+titleDisp)		
 				.setTabListener(this));
 			
+			actionBar.addTab(
+					actionBar.newTab()
+					.setText("+ / -")
+					.setTabListener(this));
+			
 			fragment = new TabFragment();
 			fragment.setArticles(foList.get(title).articles);
 			fragments.add(fragment);
@@ -260,7 +265,7 @@ public class FragmentITSL extends Fragment implements
 		/*
 		 *  here we retrieve the tabfragment object that should already have 
 		 *  been initialized and added to the adapter
-		 */
+		 */ 
 		if (mViewPager != null)
 			mViewPager.setCurrentItem(tab.getPosition());
 	}

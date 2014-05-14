@@ -20,6 +20,7 @@ public class ListPagerAdapter extends FragmentStatePagerAdapter
 	@Override
 	public Fragment getItem(int i)
 	{
+		
 
 		if (fragmentList.isEmpty() || fragmentList.size() < i)
 		{
@@ -31,6 +32,8 @@ public class ListPagerAdapter extends FragmentStatePagerAdapter
 			return fragmentList.get(i);
 		}
 	}
+		
+	
 
 	@Override
 	public int getCount()
