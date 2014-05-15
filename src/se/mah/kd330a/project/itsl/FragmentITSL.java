@@ -185,11 +185,13 @@ public class FragmentITSL extends Fragment implements
 				titleDisp = title;
 			}
 			
+
+			
+			
 			actionBar.addTab(
 				actionBar.newTab()
 				.setText(" "+titleDisp)		
 				.setTabListener(this));
-			
 			actionBar.addTab(
 					actionBar.newTab()
 					.setText("+ / -")
