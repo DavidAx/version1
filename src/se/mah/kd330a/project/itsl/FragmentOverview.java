@@ -17,6 +17,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
@@ -45,6 +46,7 @@ public class FragmentOverview extends Fragment implements
 	private ProgressDialog dialog;
 	private PendingIntent backgroundUpdateIntent;
 	private ViewPager mViewPager;
+	private PagerTabStrip pagerTabStrip;
 	private ListPagerAdapter listPagerAdapter;
 	private ViewGroup rootView;
 
@@ -95,8 +97,8 @@ public class FragmentOverview extends Fragment implements
 		AlarmManager alarm = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
 		alarm.cancel(backgroundUpdateIntent);
 		
-		if (feedManager.queueSize() > 0)
-			getActivity().getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		/*if (feedManager.queueSize() > 0)
+			getActivity().getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);*/
 	}
 	
 	public void onPause()
@@ -169,12 +171,19 @@ public class FragmentOverview extends Fragment implements
 		actionBar = getActivity().getActionBar();
 		actionBar.removeAllTabs();
 
+		
 
 		/*
 		 * For all feeds we have downloaded, create a new tab and add the 
 		 * corresponding data to a new TabFragment
 		 */
 		TabFragment fragment;
+		
+		actionBar.addTab(
+				actionBar.newTab()
+				.setText(" Catergories")		
+				.setTabListener(this));
+		
 		for (String title : foList.keySet())
 		{
 			String titleDisp = "course name";
@@ -254,6 +263,11 @@ public class FragmentOverview extends Fragment implements
 
 		listPagerAdapter = new ListPagerAdapter(getActivity().getSupportFragmentManager(), createFragments());
 		mViewPager.setAdapter(listPagerAdapter);
+		pagerTabStrip = (PagerTabStrip) rootView.findViewById(R.id.pager_tab_strip);
+		pagerTabStrip.setTabIndicatorColor(getResources().getColor(R.color.red_mah));
+		pagerTabStrip.setTextSpacing(1);
+		pagerTabStrip.setDrawFullUnderline(true);
+		
 		
 		//Toast.makeText(getActivity(), "" + articles.size() + " articles", Toast.LENGTH_LONG).show();
 	}
