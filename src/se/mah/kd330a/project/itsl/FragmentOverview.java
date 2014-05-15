@@ -41,7 +41,7 @@ public class FragmentOverview extends Fragment implements
 	private static final long UPDATE_INTERVAL = 600000; // every ten minute
 	private static final long INITIAL_START_AFTER = 1000; // one minute
 	//private static final long UPDATE_INTERVAL = 60000; // every minute for testing
-	private ActionBar actionBar;
+	//private ActionBar actionBar;
 	private FeedManager feedManager;
 	private ProgressDialog dialog;
 	private PendingIntent backgroundUpdateIntent;
@@ -168,9 +168,6 @@ public class FragmentOverview extends Fragment implements
 	{
 		ArrayList<TabFragment> fragments = new ArrayList<TabFragment>();
 		HashMap<String, FeedObject> foList = getFeedObjects();
-		actionBar = getActivity().getActionBar();
-		actionBar.removeAllTabs();
-
 		
 
 		/*
@@ -178,11 +175,6 @@ public class FragmentOverview extends Fragment implements
 		 * corresponding data to a new TabFragment
 		 */
 		TabFragment fragment;
-		
-		actionBar.addTab(
-				actionBar.newTab()
-				.setText(" Catergories")		
-				.setTabListener(this));
 		
 		for (String title : foList.keySet())
 		{
@@ -203,11 +195,6 @@ public class FragmentOverview extends Fragment implements
 				Log.i("Courses",testtest);
 				
 			}
-			
-			actionBar.addTab(
-				actionBar.newTab()
-				.setText(" "+titleDisp)		
-				.setTabListener(this));
 			
 			fragment = new TabFragment();
 			fragment.setArticles(foList.get(title).articles);
@@ -244,19 +231,13 @@ public class FragmentOverview extends Fragment implements
 			dialog.dismiss();
 			dialog = null;
 		}
-		
-		/*
-		 * Set up tabs in the actionbar
-		 */
-		actionBar = getActivity().getActionBar();
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-		
+			
 		mViewPager = (ViewPager) rootView.findViewById(R.id.pager);
 		mViewPager.setOnPageChangeListener(
 	            new ViewPager.SimpleOnPageChangeListener() {
 	                @Override
 	                public void onPageSelected(int position) {
-	                    actionBar.setSelectedNavigationItem(position);
+	      //              actionBar.setSelectedNavigationItem(position);
 	                }
 	            });
 
