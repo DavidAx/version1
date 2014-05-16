@@ -17,6 +17,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
@@ -40,11 +41,12 @@ public class FragmentOverview extends Fragment implements
 	private static final long UPDATE_INTERVAL = 600000; // every ten minute
 	private static final long INITIAL_START_AFTER = 1000; // one minute
 	//private static final long UPDATE_INTERVAL = 60000; // every minute for testing
-	private ActionBar actionBar;
+	//private ActionBar actionBar;
 	private FeedManager feedManager;
 	private ProgressDialog dialog;
 	private PendingIntent backgroundUpdateIntent;
 	private ViewPager mViewPager;
+	private PagerTabStrip pagerTabStrip;
 	private ListPagerAdapter listPagerAdapter;
 	private ViewGroup rootView;
 
@@ -95,8 +97,8 @@ public class FragmentOverview extends Fragment implements
 		AlarmManager alarm = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
 		alarm.cancel(backgroundUpdateIntent);
 		
-		if (feedManager.queueSize() > 0)
-			getActivity().getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		/*if (feedManager.queueSize() > 0)
+			getActivity().getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);*/
 	}
 	
 	public void onPause()
@@ -166,15 +168,14 @@ public class FragmentOverview extends Fragment implements
 	{
 		ArrayList<TabFragment> fragments = new ArrayList<TabFragment>();
 		HashMap<String, FeedObject> foList = getFeedObjects();
-		actionBar = getActivity().getActionBar();
-		actionBar.removeAllTabs();
-
+		
 
 		/*
 		 * For all feeds we have downloaded, create a new tab and add the 
 		 * corresponding data to a new TabFragment
 		 */
 		TabFragment fragment;
+		
 		for (String title : foList.keySet())
 		{
 			String titleDisp = "course name";
@@ -194,11 +195,6 @@ public class FragmentOverview extends Fragment implements
 				Log.i("Courses",testtest);
 				
 			}
-			
-			actionBar.addTab(
-				actionBar.newTab()
-				.setText(" "+titleDisp)		
-				.setTabListener(this));
 			
 			fragment = new TabFragment();
 			fragment.setArticles(foList.get(title).articles);
@@ -235,25 +231,24 @@ public class FragmentOverview extends Fragment implements
 			dialog.dismiss();
 			dialog = null;
 		}
-		
-		/*
-		 * Set up tabs in the actionbar
-		 */
-		actionBar = getActivity().getActionBar();
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-		
+			
 		mViewPager = (ViewPager) rootView.findViewById(R.id.pager);
 		mViewPager.setOnPageChangeListener(
 	            new ViewPager.SimpleOnPageChangeListener() {
 	                @Override
 	                public void onPageSelected(int position) {
-	                    actionBar.setSelectedNavigationItem(position);
+	      //              actionBar.setSelectedNavigationItem(position);
 	                }
 	            });
 
 
 		listPagerAdapter = new ListPagerAdapter(getActivity().getSupportFragmentManager(), createFragments());
 		mViewPager.setAdapter(listPagerAdapter);
+		pagerTabStrip = (PagerTabStrip) rootView.findViewById(R.id.pager_tab_strip);
+		pagerTabStrip.setTabIndicatorColor(getResources().getColor(R.color.red_mah));
+		pagerTabStrip.setTextSpacing(1);
+		pagerTabStrip.setDrawFullUnderline(true);
+		
 		
 		//Toast.makeText(getActivity(), "" + articles.size() + " articles", Toast.LENGTH_LONG).show();
 	}
