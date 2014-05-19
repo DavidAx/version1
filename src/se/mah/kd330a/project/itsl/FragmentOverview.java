@@ -174,8 +174,12 @@ public class FragmentOverview extends Fragment implements
 		 * For all feeds we have downloaded, create a new tab and add the 
 		 * corresponding data to a new TabFragment
 		 */
+		TabFragment add;
+		add = new TabFragment();
+//		add.getLayoutInflater(R.layout.itsl_help);
+		fragments.add(add);
 		TabFragment fragment;
-		
+
 		for (String title : foList.keySet())
 		{
 			String titleDisp = "course name";

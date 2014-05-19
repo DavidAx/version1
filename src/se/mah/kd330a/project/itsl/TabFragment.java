@@ -37,7 +37,6 @@ public class TabFragment extends Fragment implements OnChildClickListener
 	{
 		// don't destroy fragment when orientation changes
 		setRetainInstance(true);
-		
 		View rootView = inflater.inflate(R.layout.itsl_fragment_main, container, false);
 		listAdapter = new ExpandableListAdapter(getActivity(), articleList);
 		expListView = (ExpandableListView) rootView.findViewById(R.id.lvExp);
