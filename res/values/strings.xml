@@ -204,8 +204,9 @@
     <string name="tx_textMain">To get the latest information from It\'s learning, follow these steps.</string>
     <string name="tx_textTwo">Launch the browser in your mobile phone and log in to It\'s Learning </string>
     <string name="tx_textThree"> Find the icon shown below. Click on the icon for the feed you want, then a new window will open.</string>
-    <string name="tx_textFour"> Bookmark all the pages you want in your browser and then restart the app. If you want to remove a feed from the app, just remove the bookmark for that feed in your browser.</string>
-        <!-- Credits strings -->
+    <string name="tx_textFour"> Bookmark all the pages you want in your browser and then restart the app.</string>
+     <string name="tx_textFive"> If you want to remove a feed from the app, just remove the bookmark for that feed in your browser.</string> 
+    <!-- Credits strings -->
     <string name="app_name2">scroll</string>
     <string name="action_settings2">Settings</string>
     <string name="hello_world2">Hello world!</string>
