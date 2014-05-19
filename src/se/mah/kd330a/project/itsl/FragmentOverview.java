@@ -86,6 +86,7 @@ public class FragmentOverview extends Fragment implements
 			 */
 			rootView = (ViewGroup) inflater.inflate(R.layout.itsl_help, container, false);
 		}
+		
 			
 		return rootView;
 	}
@@ -174,9 +175,9 @@ public class FragmentOverview extends Fragment implements
 		 * For all feeds we have downloaded, create a new tab and add the 
 		 * corresponding data to a new TabFragment
 		 */
+		
 		TabFragment add;
 		add = new TabFragment();
-//		add.getLayoutInflater(R.layout.itsl_help);
 		fragments.add(add);
 		TabFragment fragment;
 
@@ -270,6 +271,8 @@ public class FragmentOverview extends Fragment implements
 		 *  here we retrieve the tabfragment object that should already have 
 		 *  been initialized and added to the adapter
 		 */
+		
+		
 		if (mViewPager != null)
 			mViewPager.setCurrentItem(tab.getPosition());
 	}

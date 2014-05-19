@@ -1,13 +1,13 @@
 package se.mah.kd330a.project.itsl;
 
 import se.mah.kd330a.project.R;
-import android.app.Fragment;
 import android.os.Bundle;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;

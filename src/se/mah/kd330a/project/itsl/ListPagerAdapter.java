@@ -20,13 +20,15 @@ public class ListPagerAdapter extends FragmentStatePagerAdapter
 	@Override
 	public Fragment getItem(int i)
 	{
-		
-
-		if (fragmentList.isEmpty() || fragmentList.size() < i)
-		{
-			Log.e(TAG, "Index out of bounds: " + Integer.toString(i));
-			return null;
+		if(i < 1){
+			return new HelpFragment();
 		}
+
+//		if (fragmentList.isEmpty() || fragmentList.size() < i)
+//		{
+//			Log.e(TAG, "Index out of bounds: " + Integer.toString(i));
+//			return null;
+//		}
 		else
 		{
 			return fragmentList.get(i);
