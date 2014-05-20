@@ -192,7 +192,7 @@ public class FragmentOverview extends Fragment implements
 		
 		TabFragment fragment;
 
-		String nyny ="";
+		String ShortTitle ="";
 		String[] words = null;
 		for (String title : foList.keySet())
 		{
@@ -206,17 +206,17 @@ public class FragmentOverview extends Fragment implements
 				}
 				for(int j = 0;j<words.length;j++){
 					char letter = words[j].charAt(0);
-					nyny = nyny+letter;
+					ShortTitle = ShortTitle+letter;
 				}
-				titleDisp = nyny.toUpperCase();
-				titles.add(nyny);
-				nyny="";
+				titleDisp = ShortTitle.toUpperCase();
+				titles.add(ShortTitle);
+				ShortTitle="";
 			}
 			catch (Exception e)
 			{
 				titleDisp = title;
 				titles.add(title);
-				nyny="";
+				ShortTitle="";
 			}
 			
 			fragment = new TabFragment();
