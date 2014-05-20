@@ -179,9 +179,6 @@ public class FragmentOverview extends Fragment implements
 		 * For all feeds we have downloaded, create a new tab and add the 
 		 * corresponding data to a new TabFragment
 		 */
-		TabFragment start;
-		start = new TabFragment();
-		fragments.add(start);
 		
 		TabFragment start;
 		start = new TabFragment();
