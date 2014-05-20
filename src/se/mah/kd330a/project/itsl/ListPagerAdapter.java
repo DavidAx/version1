@@ -20,7 +20,10 @@ public class ListPagerAdapter extends FragmentStatePagerAdapter
 	@Override
 	public Fragment getItem(int i)
 	{
-		if(i < 1){
+		if(i==0){
+			return new FragmentFeatureStart();
+		}
+		if(i == 1){
 			return new HelpFragment();
 		}
 
@@ -45,6 +48,12 @@ public class ListPagerAdapter extends FragmentStatePagerAdapter
 	
 	    @Override
 	    public CharSequence getPageTitle(int position) {
-	        return "OBJECT " + (position + 1);
+	        if(position==0){
+	        	return"Start";
+	        }
+	        if(position==1){
+	        	return"help";
+	        }
+	    	return "OBJECT " + (position + 1);
 	    }
 }
