@@ -176,6 +176,11 @@ public class FragmentOverview extends Fragment implements
 		 * corresponding data to a new TabFragment
 		 */
 		
+		TabFragment start;
+		start = new TabFragment();
+		fragments.add(start);
+		
+		
 		TabFragment add;
 		add = new TabFragment();
 		fragments.add(add);
@@ -210,6 +215,9 @@ public class FragmentOverview extends Fragment implements
 		}
 		return fragments;
 	}
+	
+	
+	
 	
 	public void onFeedManagerProgress(FeedManager fm, int progress, int max)
 	{
