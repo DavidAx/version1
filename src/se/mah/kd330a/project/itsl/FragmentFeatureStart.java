@@ -1,5 +1,7 @@
 package se.mah.kd330a.project.itsl;
 
+import java.util.ArrayList;
+
 import se.mah.kd330a.project.R;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,7 +12,7 @@ import android.view.ViewGroup;
 public class FragmentFeatureStart extends Fragment {
 	
 	private ViewGroup rootView;
-
+	private ArrayList<TabFragment> fragmentlist;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{

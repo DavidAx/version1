@@ -52,8 +52,9 @@ public class ListPagerAdapter extends FragmentStatePagerAdapter
 	        	return"Start";
 	        }
 	        if(position==1){
-	        	return"help";
+	        	return"Help";
 	        }
-	    	return "OBJECT " + (position + 1);
+	        TabFragment frag = fragmentList.get(position);
+	    	return frag.title;
 	    }
 }

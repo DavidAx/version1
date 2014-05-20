@@ -26,8 +26,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.app.FragmentTransaction;
@@ -49,12 +51,15 @@ public class FragmentOverview extends Fragment implements
 	private PagerTabStrip pagerTabStrip;
 	private ListPagerAdapter listPagerAdapter;
 	private ViewGroup rootView;
+	
 
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		titles = new ArrayList<String>();
+		
+		
 		/*
 		 * Set up the repeating task of updating data in the background 
 		 */
@@ -63,7 +68,6 @@ public class FragmentOverview extends Fragment implements
 		feedManager = new FeedManager(this, appContext);
 		
 	}
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
@@ -175,12 +179,19 @@ public class FragmentOverview extends Fragment implements
 		 * For all feeds we have downloaded, create a new tab and add the 
 		 * corresponding data to a new TabFragment
 		 */
+		TabFragment start;
+		start = new TabFragment();
+		fragments.add(start);
 		
 		TabFragment add;
 		add = new TabFragment();
 		fragments.add(add);
+		
+		
 		TabFragment fragment;
 
+		String nyny ="";
+		String[] words = null;
 		for (String title : foList.keySet())
 		{
 			String titleDisp = "course name";
@@ -188,21 +199,27 @@ public class FragmentOverview extends Fragment implements
 			{
 				String[] parts = title.split("-");
 				titleDisp = parts[2].substring(1, parts[2].length() - 1);
-				titles.add(titleDisp);
+				for(int i = 0;i<titleDisp.length();i++){
+					words = titleDisp.split(" ");
+				}
+				for(int j = 0;j<words.length;j++){
+					char letter = words[j].charAt(0);
+					nyny = nyny+letter;
+				}
+				titleDisp = nyny.toUpperCase();
+				titles.add(nyny);
+				nyny="";
 			}
 			catch (Exception e)
 			{
 				titleDisp = title;
-			}
-			
-			for(int i = 0; i<titles.size();i++){
-				String testtest = titles.get(i);
-				Log.i("Courses",testtest);
-				
+				titles.add(title);
+				nyny="";
 			}
 			
 			fragment = new TabFragment();
 			fragment.setArticles(foList.get(title).articles);
+			fragment.setTitle(titleDisp);
 			fragments.add(fragment);
 		
 			

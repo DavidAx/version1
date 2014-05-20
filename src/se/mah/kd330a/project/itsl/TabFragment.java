@@ -17,6 +17,7 @@ public class TabFragment extends Fragment implements OnChildClickListener
 	private ExpandableListAdapter listAdapter;
 	private ExpandableListView expListView;
 	private ArrayList<Article> articleList;
+	public String title = "rubrik";
 
 	public TabFragment()
 	{
@@ -27,8 +28,11 @@ public class TabFragment extends Fragment implements OnChildClickListener
 	public void setArticles(ArrayList<Article> articles)
 	{
 		articleList = articles;
+	
 	}
-
+	public void setTitle(String s){
+		title = s;
+	}
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
