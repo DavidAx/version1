@@ -39,6 +39,7 @@ public class FragmentOverview extends Fragment implements
 	ActionBar.TabListener
 {	
 	private ArrayList<String> titles;
+	private ArrayList<String> categories;
 	private static final String TAG = "FragmentITSL";
 	private static final long UPDATE_INTERVAL = 600000; // every ten minute
 	private static final long INITIAL_START_AFTER = 1000; // one minute
@@ -58,7 +59,7 @@ public class FragmentOverview extends Fragment implements
 	{
 		super.onCreate(savedInstanceState);
 		titles = new ArrayList<String>();
-		
+		categories = new ArrayList<String>();
 		
 		/*
 		 * Set up the repeating task of updating data in the background 
@@ -180,13 +181,32 @@ public class FragmentOverview extends Fragment implements
 		 * corresponding data to a new TabFragment
 		 */
 		
+		for (String category : foList.keySet())
+		{
+			String categoryName = "course name";
+			try
+			{
+				String[] parts = category.split("-");
+				categoryName = parts[2].substring(1, parts[2].length() - 1);
+				categories.add(categoryName);
+			}
+			catch (Exception e)
+			{
+				categoryName = category;
+				categories.add(categoryName);
+			}
+		}
+		
 		TabFragment start;
 		start = new TabFragment();
+		start.setTitle("Start");
+		start.setTitles(categories);
 		fragments.add(start);
 		
 		
 		TabFragment add;
 		add = new TabFragment();
+		start.setTitle("Help");
 		fragments.add(add);
 		
 		
@@ -226,6 +246,9 @@ public class FragmentOverview extends Fragment implements
 		
 			
 			Log.i(TAG, "Filtered map key => tab title is: " + title);
+			for (TabFragment frag : fragments) {
+				Log.i(TAG,"fragmentName "+frag.title);
+			}
 		}
 		return fragments;
 	}
