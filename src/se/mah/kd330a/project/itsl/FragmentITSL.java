@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+import org.kobjects.util.Strings;
+
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.AlarmManager;
@@ -15,6 +17,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
@@ -23,8 +26,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.app.FragmentTransaction;
@@ -32,24 +37,30 @@ import android.app.FragmentTransaction;
 public class FragmentITSL extends Fragment implements 
 	FeedManager.FeedManagerDoneListener, 
 	ActionBar.TabListener
-{
+{	
+	private ArrayList<String> titles;
+	private ArrayList<String> categories;
 	private static final String TAG = "FragmentITSL";
-	private static final long UPDATE_INTERVAL = 600000; // every ten minute
+	//private static final long UPDATE_INTERVAL = 600000; // every ten minute
 	private static final long INITIAL_START_AFTER = 1000; // one minute
-	//private static final long UPDATE_INTERVAL = 60000; // every minute for testing
-	private ActionBar actionBar;
+	private static final long UPDATE_INTERVAL = 60000; // every minute for testing
+	//private ActionBar actionBar;
 	private FeedManager feedManager;
 	private ProgressDialog dialog;
 	private PendingIntent backgroundUpdateIntent;
 	private ViewPager mViewPager;
+	private PagerTabStrip pagerTabStrip;
 	private ListPagerAdapter listPagerAdapter;
 	private ViewGroup rootView;
+	
 
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-
+		titles = new ArrayList<String>();
+		categories = new ArrayList<String>();
+		
 		/*
 		 * Set up the repeating task of updating data in the background 
 		 */
@@ -58,7 +69,6 @@ public class FragmentITSL extends Fragment implements
 		feedManager = new FeedManager(this, appContext);
 		
 	}
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
@@ -81,6 +91,7 @@ public class FragmentITSL extends Fragment implements
 			 */
 			rootView = (ViewGroup) inflater.inflate(R.layout.itsl_help, container, false);
 		}
+		
 			
 		return rootView;
 	}
@@ -92,8 +103,8 @@ public class FragmentITSL extends Fragment implements
 		AlarmManager alarm = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
 		alarm.cancel(backgroundUpdateIntent);
 		
-		if (feedManager.queueSize() > 0)
-			getActivity().getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		/*if (feedManager.queueSize() > 0)
+			getActivity().getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);*/
 	}
 	
 	public void onPause()
@@ -163,15 +174,46 @@ public class FragmentITSL extends Fragment implements
 	{
 		ArrayList<TabFragment> fragments = new ArrayList<TabFragment>();
 		HashMap<String, FeedObject> foList = getFeedObjects();
-		actionBar = getActivity().getActionBar();
-		actionBar.removeAllTabs();
-
+		
 
 		/*
 		 * For all feeds we have downloaded, create a new tab and add the 
 		 * corresponding data to a new TabFragment
 		 */
+		
+		for (String category : foList.keySet())
+		{
+			String categoryName = "course name";
+			try
+			{
+				String[] parts = category.split("-");
+				categoryName = parts[2].substring(1, parts[2].length() - 1);
+				categories.add(categoryName);
+			}
+			catch (Exception e)
+			{
+				categoryName = category;
+				categories.add(categoryName);
+			}
+		}
+		
+		TabFragment start;
+		start = new TabFragment();
+		start.setTitle("Start");
+		start.setTitles(categories);
+		fragments.add(start);
+		
+		
+		TabFragment add;
+		add = new TabFragment();
+		start.setTitle("Help");
+		fragments.add(add);
+		
+		
 		TabFragment fragment;
+
+		String ShortTitle ="";
+		String[] words = null;
 		for (String title : foList.keySet())
 		{
 			String titleDisp = "course name";
@@ -179,33 +221,40 @@ public class FragmentITSL extends Fragment implements
 			{
 				String[] parts = title.split("-");
 				titleDisp = parts[2].substring(1, parts[2].length() - 1);
+				for(int i = 0;i<titleDisp.length();i++){
+					words = titleDisp.split(" ");
+				}
+				for(int j = 0;j<words.length;j++){
+					char letter = words[j].charAt(0);
+					ShortTitle = ShortTitle+letter;
+				}
+				titleDisp = ShortTitle.toUpperCase();
+				titles.add(ShortTitle);
+				ShortTitle="";
 			}
 			catch (Exception e)
 			{
 				titleDisp = title;
+				titles.add(title);
+				ShortTitle="";
 			}
-			
-
-			
-			
-			actionBar.addTab(
-				actionBar.newTab()
-				.setText(" "+titleDisp)		
-				.setTabListener(this));
-			actionBar.addTab(
-					actionBar.newTab()
-					.setText("+ / -")
-					.setTabListener(this));
 			
 			fragment = new TabFragment();
 			fragment.setArticles(foList.get(title).articles);
+			fragment.setTitle(titleDisp);
 			fragments.add(fragment);
 		
 			
 			Log.i(TAG, "Filtered map key => tab title is: " + title);
+			for (TabFragment frag : fragments) {
+				Log.i(TAG,"fragmentName "+frag.title);
+			}
 		}
 		return fragments;
 	}
+	
+	
+	
 	
 	public void onFeedManagerProgress(FeedManager fm, int progress, int max)
 	{
@@ -232,25 +281,24 @@ public class FragmentITSL extends Fragment implements
 			dialog.dismiss();
 			dialog = null;
 		}
-		
-		/*
-		 * Set up tabs in the actionbar
-		 */
-		actionBar = getActivity().getActionBar();
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-		
+			
 		mViewPager = (ViewPager) rootView.findViewById(R.id.pager);
 		mViewPager.setOnPageChangeListener(
 	            new ViewPager.SimpleOnPageChangeListener() {
 	                @Override
 	                public void onPageSelected(int position) {
-	                    actionBar.setSelectedNavigationItem(position);
+	      //              actionBar.setSelectedNavigationItem(position);
 	                }
 	            });
 
 
 		listPagerAdapter = new ListPagerAdapter(getActivity().getSupportFragmentManager(), createFragments());
 		mViewPager.setAdapter(listPagerAdapter);
+		pagerTabStrip = (PagerTabStrip) rootView.findViewById(R.id.pager_tab_strip);
+		pagerTabStrip.setTabIndicatorColor(getResources().getColor(R.color.orange));
+		pagerTabStrip.setTextSpacing(1);
+		pagerTabStrip.setDrawFullUnderline(true);
+		
 		
 		//Toast.makeText(getActivity(), "" + articles.size() + " articles", Toast.LENGTH_LONG).show();
 	}
@@ -267,7 +315,9 @@ public class FragmentITSL extends Fragment implements
 		/*
 		 *  here we retrieve the tabfragment object that should already have 
 		 *  been initialized and added to the adapter
-		 */ 
+		 */
+		
+		
 		if (mViewPager != null)
 			mViewPager.setCurrentItem(tab.getPosition());
 	}

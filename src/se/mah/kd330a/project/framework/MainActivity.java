@@ -3,16 +3,10 @@ package se.mah.kd330a.project.framework;
 
 
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 
-import net.fortuna.ical4j.data.ParserException;
 import se.mah.kd330a.project.R;
-import se.mah.kd330a.project.adladok.model.Course;
 import se.mah.kd330a.project.adladok.model.Me;
 import se.mah.kd330a.project.adladok.model.ScheduleFixedDelay.UpdateType;
 import se.mah.kd330a.project.faq.FragmentFaq;
@@ -20,33 +14,25 @@ import se.mah.kd330a.project.find.FragmentFind;
 import se.mah.kd330a.project.help.FragmentCredits;
 import se.mah.kd330a.project.home.FragmentHome;
 import se.mah.kd330a.project.home.data.RSSFeed;
-import se.mah.kd330a.project.itsl.FeedManager;
 import se.mah.kd330a.project.itsl.FragmentITSL;
-import se.mah.kd330a.project.itsl.FragmentOverview;
-import se.mah.kd330a.project.itsl.HelpFragment;
-import se.mah.kd330a.project.schedule.data.KronoxCalendar;
-import se.mah.kd330a.project.schedule.data.KronoxReader;
 import se.mah.kd330a.project.schedule.view.FragmentScheduleWeekPager;
 import se.mah.kd330a.project.settings.view.SettingsActivity;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
@@ -178,10 +164,7 @@ public class MainActivity extends FragmentActivity implements Observer{
             startActivity(intent);
             
             return true;
-        case R.id.rss_help:
-        	setContentView(R.layout.itsl_help);
-            
-            return true;
+        
         	
         default:
             return super.onOptionsItemSelected(item);
@@ -211,7 +194,7 @@ public class MainActivity extends FragmentActivity implements Observer{
 			transaction.addToBackStack(null);
 			break;
 		case ITSL:
-			fragment = new FragmentOverview();
+			fragment = new FragmentITSL();
 			transaction.addToBackStack(null);
 			break;
 		case FIND:
