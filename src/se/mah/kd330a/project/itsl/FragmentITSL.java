@@ -202,7 +202,6 @@ public class FragmentITSL extends Fragment implements
 //		start.setTitle("Start");
 //		start.setTitles(categories);
 //		fragments.add(start);
-//		
 		
 		
 		
@@ -224,6 +223,11 @@ public class FragmentITSL extends Fragment implements
 				for(int j = 0;j<words.length;j++){
 					char letter = words[j].charAt(0);
 					ShortTitle = ShortTitle+letter;
+					for(int k = 0;k<words[j].length();k++){
+						if(words[j].charAt(k) == ':'){
+							ShortTitle = ShortTitle+":";
+						}
+					}
 				}
 				titleDisp = ShortTitle.toUpperCase();
 				titles.add(ShortTitle);
@@ -240,18 +244,20 @@ public class FragmentITSL extends Fragment implements
 			fragment.setArticles(foList.get(title).articles);
 			fragment.setTitle(titleDisp);
 			fragments.add(fragment);
-		
+			
+			
+			
 			
 			Log.i(TAG, "Filtered map key => tab title is: " + title);
 			for (TabFragment frag : fragments) {
 				Log.i(TAG,"fragmentName "+frag.title);
 			}
+			
 		}
 		TabFragment add;
 		add = new TabFragment();
 		add.setTitle("Help");
 		fragments.add(add);
-		
 		return fragments;
 	}
 	

@@ -51,7 +51,9 @@ public class ListPagerAdapter extends FragmentStatePagerAdapter
 //	        if(position==0){
 //	        	return"Start";
 //	        }
+
 	        if(position== fragmentList.size()-1){
+
 	        	return"Help";
 	        }
 	        TabFragment frag = fragmentList.get(position);

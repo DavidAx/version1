@@ -9,6 +9,7 @@ import java.util.Observer;
 import se.mah.kd330a.project.R;
 import se.mah.kd330a.project.adladok.model.Me;
 import se.mah.kd330a.project.adladok.model.ScheduleFixedDelay.UpdateType;
+import se.mah.kd330a.project.concept.Fragment_concept;
 import se.mah.kd330a.project.faq.FragmentFaq;
 import se.mah.kd330a.project.find.FragmentFind;
 import se.mah.kd330a.project.help.FragmentCredits;
@@ -54,6 +55,7 @@ public class MainActivity extends FragmentActivity implements Observer{
 	private final int FIND = 3;
 	private final int FAQ = 4;
 	private final int HELP = 5;
+	private final int CONCEPT = 6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -207,6 +209,10 @@ public class MainActivity extends FragmentActivity implements Observer{
 			break;
 		case HELP:
 			fragment = new FragmentCredits();
+		    transaction.addToBackStack(null);
+			break;
+		case CONCEPT:
+			fragment = new Fragment_concept();
 		    transaction.addToBackStack(null);
 			break;
 		default:	
