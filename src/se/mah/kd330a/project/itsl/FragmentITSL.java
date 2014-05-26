@@ -223,6 +223,11 @@ public class FragmentITSL extends Fragment implements
 				for(int j = 0;j<words.length;j++){
 					char letter = words[j].charAt(0);
 					ShortTitle = ShortTitle+letter;
+					for(int k = 0;k<words[j].length();k++){
+						if(words[j].charAt(k) == ':'){
+							ShortTitle = ShortTitle+":";
+						}
+					}
 				}
 				titleDisp = ShortTitle.toUpperCase();
 				titles.add(ShortTitle);
