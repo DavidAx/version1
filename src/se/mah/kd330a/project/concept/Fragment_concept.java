@@ -20,5 +20,7 @@ public class Fragment_concept extends Fragment {
 			
 		return rootView;
 	}
+	
+	
 
 }
