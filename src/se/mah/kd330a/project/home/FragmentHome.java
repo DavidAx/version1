@@ -27,7 +27,10 @@ import se.mah.kd330a.project.schedule.data.KronoxReader;
 import se.mah.kd330a.project.schedule.view.FragmentScheduleWeekPager;
 import se.mah.kd330a.project.R;
 import android.app.ActionBar;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.AsyncTask;
@@ -39,6 +42,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -56,7 +60,8 @@ public class FragmentHome extends Fragment implements FeedManager.FeedManagerDon
 	private boolean profileRegistered = false;
 	private FeedManager ITSLfeedManager;
 	private String TAG ="FragmentHome";
-	
+	private Context ctx;
+	ImageView img;
 	public FragmentHome()
 	{
 	}
@@ -64,6 +69,8 @@ public class FragmentHome extends Fragment implements FeedManager.FeedManagerDon
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
+		
+
 		Log.i("FragmentHome", "OnCreate: ");
 		super.onCreate(savedInstanceState);
 		Me.getInstance().getObservable().addObserver(this);
@@ -81,15 +88,38 @@ public class FragmentHome extends Fragment implements FeedManager.FeedManagerDon
 		{
 			Log.e("FragmentHome", "OnCreate: "+e.toString());
 		}
+		
+		
 	}
 
+	MyReceiver rec=new MyReceiver();
+	@Override
+	public void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+
+		IntentFilter filter =new IntentFilter();
+		filter.addAction("se.mah.something");
+		ctx.registerReceiver(rec, filter);
+	}
+	
+	@Override
+	public void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		ctx.unregisterReceiver(rec);
+	}
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
+		
 		Log.i("FragmentHome", "OnCreateView: ");
+		ctx= inflater.getContext();
 		rootView = (ViewGroup) inflater.inflate(R.layout.fragment_screen_home, container, false);
 		setNextKronoxClass(rootView);
 		setNewsFeedMah(rootView);
+		img =(ImageView)rootView.findViewById(R.id.imgUpdate);
+		
 		ITSLfeedManager = new FeedManager(this, getActivity().getApplicationContext());
 		//ITSLfeedManager.getFeedList().size()
 		Log.i(TAG,"ITSLfeedManager.getFeedList().size()" + ITSLfeedManager.getFeedList().size());
@@ -101,7 +131,24 @@ public class FragmentHome extends Fragment implements FeedManager.FeedManagerDon
 		//Perhaps or all should be done in ScheduledFixedDelay????
 		return rootView;
 	}
+	// Update is received but the Rss does not update when there is a multiple new posts in a
+	// short amount of time. This code Recieves the broadcast we are doing in TimeAlarm and
+	// makes a toast to confirm the update. 
+	public class MyReceiver extends BroadcastReceiver {
 
+		   @Override
+		   public void onReceive(Context context, Intent intent) {
+		      Toast.makeText(context, "Intent Detected.", Toast.LENGTH_LONG).show();
+		      intent.getExtras();
+		      
+		      
+		      img.setVisibility(View.VISIBLE);
+		      
+		      
+		   }
+
+		}
+	
 	private void setNewsFeedMah(ViewGroup rootView)
 	{
 		Log.i(TAG,"setNewsFeedMah: ");

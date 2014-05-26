@@ -197,17 +197,14 @@ public class FragmentITSL extends Fragment implements
 			}
 		}
 		
-		TabFragment start;
-		start = new TabFragment();
-		start.setTitle("Start");
-		start.setTitles(categories);
-		fragments.add(start);
+//		TabFragment start;
+//		start = new TabFragment();
+//		start.setTitle("Start");
+//		start.setTitles(categories);
+//		fragments.add(start);
+//		
 		
 		
-		TabFragment add;
-		add = new TabFragment();
-		start.setTitle("Help");
-		fragments.add(add);
 		
 		
 		TabFragment fragment;
@@ -250,6 +247,11 @@ public class FragmentITSL extends Fragment implements
 				Log.i(TAG,"fragmentName "+frag.title);
 			}
 		}
+		TabFragment add;
+		add = new TabFragment();
+		add.setTitle("Help");
+		fragments.add(add);
+		
 		return fragments;
 	}
 	

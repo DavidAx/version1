@@ -58,9 +58,20 @@ public class TimeAlarm extends IntentService implements FeedManager.FeedManagerD
 				if (a.getArticlePubDate().compareTo(latestUpdate) > 0)
 					newArticles.add(a);
 			
-			if (newArticles.size() > 0)
+			if (newArticles.size() > 0){
 				createNotification(newArticles);
+				broadcastArticles(newArticles);
+			}
 		}
+	}
+
+	private void broadcastArticles(ArrayList<Article> newArticles) {
+		// TODO Auto-generated method stub
+		// SKICKABROADCAST
+		Intent intent = new Intent();
+		intent.setAction("se.mah.something");
+		intent.putExtra("Articles", newArticles);
+		sendBroadcast(intent);
 	}
 
 	private void createNotification(ArrayList<Article> articles)

@@ -20,10 +20,10 @@ public class ListPagerAdapter extends FragmentStatePagerAdapter
 	@Override
 	public Fragment getItem(int i)
 	{
-		if(i==0){
-			return new FragmentFeatureStart();
-		}
-		if(i == 1){
+//		if(i==0){
+//			return new FragmentFeatureStart();
+//		}
+		if(i == fragmentList.size()-1){
 			return new HelpFragment();
 		}
 
@@ -48,10 +48,10 @@ public class ListPagerAdapter extends FragmentStatePagerAdapter
 	
 	    @Override
 	    public CharSequence getPageTitle(int position) {
-	        if(position==0){
-	        	return"Start";
-	        }
-	        if(position==1){
+//	        if(position==0){
+//	        	return"Start";
+//	        }
+	        if(position== fragmentList.size()-1){
 	        	return"Help";
 	        }
 	        TabFragment frag = fragmentList.get(position);

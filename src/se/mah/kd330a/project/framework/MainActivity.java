@@ -70,7 +70,7 @@ public class MainActivity extends FragmentActivity implements Observer{
 
         // set a custom shadow that overlays the main content when the drawer opens
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
-        
+        // broadcast reciever
         mDrawerList.setSelector(R.drawable.menu_selector);
         // set up the drawer's list view with items and click listener
         mDrawerList.setAdapter(new MenuAdapter(this,
