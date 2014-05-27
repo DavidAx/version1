@@ -25,61 +25,39 @@ public class Tip implements Serializable
 	private transient RSSItem rssItem;
 	private boolean textVisible;
 	private String articleCourseCode;
-	private String articleHeader;
-	private String articleDate;
-	private Date articlePubDate;
-	private String articleText;
+	private String header;
+	private String date;
+	private String text;
 
-	public Tip(RSSItem item)
+	public Tip(String header, String date, String text)
 	{
 		super();
 
-		rssItem = item;
 		textVisible = true;
 
-		articleCourseCode = "";
-		articlePubDate = rssItem.getPubDate();
-		articleDate = articlePubDate.toString();
-		articleHeader = rssItem.getTitle();
-
-		/*
-		 * "It's learning" puts the content in the <description> and leaves
-		 * <content> empty...
-		 */
-
-		if (rssItem.getContent() != null)
-		{
-			articleText = android.text.Html.fromHtml(rssItem.getContent()).toString();
-		}
-		else
-		{
-			articleText = android.text.Html.fromHtml(rssItem.getDescription()).toString();
-		}
+		this.header = header;
+		this.date = date;
+		this.text = text;
 	}
 
-	public String getArticleHeader()
+	public String getHeader()
 	{
-		return articleHeader;
+		return header;
 	}
 
-	public String getArticleDate()
+	public String getDate()
 	{
-		return articleDate;
+		return date;
 	}
 
-	public Date getArticlePubDate()
+	public String getText()
 	{
-		return articlePubDate;
-	}
-
-	public String getArticleText()
-	{
-		return articleText;
+		return text;
 	}
 
 	public String getArticleSummary()
 	{
-		String summary = getArticleText();
+		String summary = getText();
 
 		if (summary.length() > maxSummaryLength)
 		{
@@ -101,38 +79,8 @@ public class Tip implements Serializable
 		textVisible = value;
 	}
 
-	public String getArticleCourseCode()
-	{
-		return articleCourseCode;
-	}
-
-	public void setArticleCourseCode(String courseCode)
-	{
-		articleCourseCode = courseCode;
-	}
-
 	public String toString()
 	{
-		return getArticleHeader();
-	}
-
-	private void writeObject(java.io.ObjectOutputStream out) throws IOException
-	{
-		out.writeBoolean(textVisible);
-		out.writeObject(articleCourseCode);
-		out.writeObject(articleHeader);
-		out.writeObject(articleDate);
-		out.writeObject(articlePubDate);
-		out.writeObject(articleText);
-	}
-
-	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException
-	{
-		textVisible = in.readBoolean();
-		articleCourseCode = (String) in.readObject();
-		articleHeader = (String) in.readObject();
-		articleDate = (String) in.readObject();
-		articlePubDate = (Date) in.readObject();
-		articleText = (String) in.readObject();
+		return getHeader();
 	}
 }
