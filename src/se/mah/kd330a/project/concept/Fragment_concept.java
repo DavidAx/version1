@@ -15,7 +15,7 @@ public class Fragment_concept extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
 		
-			rootView = (ViewGroup) inflater.inflate(R.layout.fragment_screen_new, container, false);
+			rootView = (ViewGroup) inflater.inflate(R.layout.fragment_screen_tipoftheday, container, false);
 		
 			
 		return rootView;

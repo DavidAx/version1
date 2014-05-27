@@ -10,7 +10,7 @@
         <item>Find on Campus</item>
         <item>Me @ MAH</item>
         <item>About this app</item>
-        <item>Concept</item>
+        <item>Tip Of The Day</item>
     </string-array>
     <string-array name="menu_icons">
         <item>@drawable/ic_menu_home</item>
