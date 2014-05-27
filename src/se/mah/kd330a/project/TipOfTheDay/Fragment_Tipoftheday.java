@@ -1,4 +1,4 @@
-package se.mah.kd330a.project.concept;
+package se.mah.kd330a.project.TipOfTheDay;
 
 import se.mah.kd330a.project.R;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class Fragment_concept extends Fragment {
+public class Fragment_Tipoftheday extends Fragment {
 	
 	private ViewGroup rootView;
 
