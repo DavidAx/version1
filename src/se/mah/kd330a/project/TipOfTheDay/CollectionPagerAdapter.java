@@ -18,7 +18,7 @@ public class CollectionPagerAdapter extends FragmentStatePagerAdapter {
 	@Override
 	public Fragment getItem(int i) {
 		if(i==0){
-			return new FragmentFeatureStart();
+			return new FragmentEventTip();
 		}
 		else{
 			return new HelpFragment();
