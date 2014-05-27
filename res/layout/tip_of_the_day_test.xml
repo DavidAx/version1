@@ -38,7 +38,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="14dp"
-        android:text="Fotbollsturnering"
+        android:text="Rabatt på Starbucks"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <RatingBar
@@ -64,7 +64,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/TextView03"
         android:layout_marginTop="30dp"
-        android:text="Fotbollsturnering"
+        android:text="Gratis bio på fredag"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <RatingBar
@@ -82,7 +82,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/TextView01"
         android:layout_marginTop="55dp"
-        android:text="Fotbollsturnering för Mah-studenter på Swedbank Stadium klockan 14:00 den 06/06"
+        android:text="Öppet seminarium om tandhygien."
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
@@ -92,7 +92,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/TextView01"
         android:layout_marginTop="20dp"
-        android:text="Fotbollsturnering"
+        android:text="Öppet seminarium"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <RatingBar
@@ -110,7 +110,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/TextView02"
         android:layout_marginTop="14dp"
-        android:text="Fotbollsturnering för Mah-studenter på Swedbank Stadium klockan 14:00 den 06/06"
+        android:text="Kaffet är billigt som fan."
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
@@ -120,7 +120,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/TextView05"
         android:layout_marginTop="16dp"
-        android:text="Fotbollsturnering för Mah-studenter på Swedbank Stadium klockan 14:00 den 06/06"
+        android:text="Det är gratis bio på fredag, passa på!"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
@@ -129,7 +129,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/TextView02"
-        android:text="Event"
+        android:text="Mat"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textSize="12sp" />
 
@@ -139,7 +139,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/TextView04"
-        android:text="Event"
+        android:text="MAH"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textSize="12sp" />
 
@@ -152,5 +152,42 @@
         android:text="Event"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/TextView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/TextView06"
+        android:layout_marginTop="26dp"
+        android:text="Grillkväll i stadsparken"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <RatingBar
+        android:id="@+id/RatingBar04"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/TextView12"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/TextView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/TextView12"
+        android:text="Places"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/TextView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/TextView10"
+        android:text="Det är en grillkväll på stadsparken på lördagen, ta med dina polare!"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </RelativeLayout>
