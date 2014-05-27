@@ -1,8 +1,10 @@
 package se.mah.kd330a.project.TipOfTheDay;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 import se.mah.kd330a.project.R;
+import se.mah.kd330a.project.itsl.Article;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,6 +18,8 @@ import android.view.animation.DecelerateInterpolator;
 
 public class Fragment_Tipoftheday extends Fragment  {
 	
+	public ArrayList<Tip> tips;
+	private Tip tip;
 	public static ViewPager viewPager;
 	static Activity context;
 	PagerTabStrip pagerTabStrip;
@@ -26,7 +30,15 @@ public class Fragment_Tipoftheday extends Fragment  {
     
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-	    context = getActivity();
+	    
+		tips = new ArrayList<Tip>();
+		tip = new Tip("Hej","123123","Texttext");
+		tip = new Tip("Hej2","123123","Texttext");
+		tip = new Tip("Hej3","123123","Texttext");
+		tip = new Tip("Hej4","123123","Texttext");
+		tip = new Tip("Hej5","123123","Texttext");
+		tip = new Tip("Hej6","123123","Texttext");
+		context = getActivity();
 		super.onCreate(savedInstanceState);
 //        InputStream iStream = getResources().openRawResource(R.raw.linksatmah);
 //        Serializer serializer = new Persister();
