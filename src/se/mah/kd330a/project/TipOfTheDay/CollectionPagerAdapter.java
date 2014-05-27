@@ -9,7 +9,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 public class CollectionPagerAdapter extends FragmentStatePagerAdapter {
     
-	Bundle args;
+	
 
 	public CollectionPagerAdapter(FragmentManager fm) {
 		super(fm);
@@ -24,20 +24,32 @@ public class CollectionPagerAdapter extends FragmentStatePagerAdapter {
 			return new HelpFragment();
 		}
 		
-//		Fragment fragment = new ChildFragment();
-//		args = new Bundle();
-//		args.putInt("POSITION", i);
-//		fragment.setArguments(args);
-		//return Fragment;
 	}
 
 	@Override
 	public int getCount() {
-		return 10;
+		return 5;
 	}
 
 	@Override
 	public CharSequence getPageTitle(int position) {
+		if(position==0){
+			return "All Tips";
+		}
+		if(position==1){
+			return "Food & Drinks";
+		}
+		if(position==2){
+			return "Events";
+		}
+		if(position==3){
+			return "MAH";
+		}
+		if(position==4){
+			return "Places";
+		}
+		else{
 		return "OBJECT " + (position + 1);
+		}
 	}
 }
