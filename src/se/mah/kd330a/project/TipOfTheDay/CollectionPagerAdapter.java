@@ -1,8 +1,6 @@
 package se.mah.kd330a.project.TipOfTheDay;
 
-import se.mah.kd330a.project.itsl.FragmentFeatureStart;
 import se.mah.kd330a.project.itsl.HelpFragment;
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
