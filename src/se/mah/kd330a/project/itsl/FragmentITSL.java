@@ -41,9 +41,9 @@ public class FragmentITSL extends Fragment implements
 	private ArrayList<String> titles;
 	private ArrayList<String> categories;
 	private static final String TAG = "FragmentITSL";
-	//private static final long UPDATE_INTERVAL = 600000; // every ten minute
+	private static final long UPDATE_INTERVAL = 600000; // every ten minute
 	private static final long INITIAL_START_AFTER = 1000; // one minute
-	private static final long UPDATE_INTERVAL = 60000; // every minute for testing
+	//private static final long UPDATE_INTERVAL = 60000; // every minute for testing
 	//private ActionBar actionBar;
 	private FeedManager feedManager;
 	private ProgressDialog dialog;
