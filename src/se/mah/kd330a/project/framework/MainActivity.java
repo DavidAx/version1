@@ -7,7 +7,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 import se.mah.kd330a.project.R;
-import se.mah.kd330a.project.TipOfTheDay.Fragment_Tipoftheday;
+
 import se.mah.kd330a.project.adladok.model.Me;
 import se.mah.kd330a.project.adladok.model.ScheduleFixedDelay.UpdateType;
 import se.mah.kd330a.project.faq.FragmentFaq;
@@ -211,10 +211,7 @@ public class MainActivity extends FragmentActivity implements Observer{
 			fragment = new FragmentCredits();
 		    transaction.addToBackStack(null);
 			break;
-		case CONCEPT:
-			fragment = new Fragment_Tipoftheday();
-		    transaction.addToBackStack(null);
-			break;
+
 		default:	
 			fragment = new FragmentHome();
 		}
