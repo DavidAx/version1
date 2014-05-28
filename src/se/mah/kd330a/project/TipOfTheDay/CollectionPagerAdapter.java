@@ -17,6 +17,20 @@ public class CollectionPagerAdapter extends FragmentStatePagerAdapter {
 	public Fragment getItem(int i) {
 		if(i==0){
 			return new FragmentEventTip();
+			
+		}
+		if(i==1){
+			return new FragmentEventFood();
+		}
+		if(i==2){
+			return new FragmentEventEvents();
+		}
+		if(i==3){
+			return new FragmentEventMah();
+			
+		}
+		if(i== 4){
+			return new FragmentEventPlaces();
 		}
 		else{
 			return new HelpFragment();
