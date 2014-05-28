@@ -22,7 +22,7 @@ public class HelpFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
-		
+		//Shows the XML layout for the helpscreen
 			rootView = (ViewGroup) inflater.inflate(R.layout.itsl_help, container, false);
 		
 			
