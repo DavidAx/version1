@@ -197,6 +197,7 @@ public class FragmentITSL extends Fragment implements
 			}
 		}
 		
+		//Adds the startscreen		
 //		TabFragment start;
 //		start = new TabFragment();
 //		start.setTitle("Start");
@@ -241,7 +242,7 @@ public class FragmentITSL extends Fragment implements
 				titles.add(title);
 				ShortTitle="";
 			}
-			
+			//Add the short title to the tabs for the feeds
 			fragment = new TabFragment();
 			fragment.setArticles(foList.get(title).articles);
 			fragment.setTitle(titleDisp);
@@ -256,6 +257,7 @@ public class FragmentITSL extends Fragment implements
 			}
 			
 		}
+		//This code adds the tab for the helpscreen
 		TabFragment add;
 		add = new TabFragment();
 		add.setTitle("Help");
