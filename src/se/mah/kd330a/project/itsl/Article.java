@@ -10,7 +10,7 @@ import org.mcsoxford.rss.RSSItem;
  * 
  * @author marcusmansson
  * 
- * this is a wrapper class for RSSItem, adding features such as making the
+ * this  is a wrapper class for RSSItem, adding features such as making the
  * articles sortable, and method for getting a summary text for large content
  * 
  * version history:
