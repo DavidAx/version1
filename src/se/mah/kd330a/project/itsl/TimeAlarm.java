@@ -64,15 +64,7 @@ public class TimeAlarm extends IntentService implements FeedManager.FeedManagerD
 			}
 		}
 	}
-	/*
-	private void broadcastArticles(ArrayList<Article> newArticles) {
-		// TODO Auto-generated method stub
-		// SKICKABROADCAST
-		Intent intent = new Intent();
-		intent.setAction("se.mah.something");
-		intent.putExtra("Articles", newArticles);
-		sendBroadcast(intent);
-	}*/
+
 
 	private void createNotification(ArrayList<Article> articles)
 	{
