@@ -65,7 +65,7 @@ public class TimeAlarm extends IntentService implements FeedManager.FeedManagerD
 		}
 	}
 
-
+	// Here we create the notification if there is a new update on It´s Learning
 	private void createNotification(ArrayList<Article> articles)
 	{
 		TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);

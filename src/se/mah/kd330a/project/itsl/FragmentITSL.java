@@ -122,10 +122,7 @@ public class FragmentITSL extends Fragment implements
 		 * Remember when we last had this view opened 
 		 */
 		Date date = new Date(System.currentTimeMillis());
-		/*
-		date.setMonth(9); // zero based index (e.g. 0-11)
-		date.setDate(20);
-		*/
+
 		Util.setLatestUpdate(getActivity().getApplicationContext(), date);
 	}
 
@@ -209,7 +206,7 @@ public class FragmentITSL extends Fragment implements
 			
 			try
 			{
-				//Here we split up the coursenames to shorter names
+				//Here we split up the coursenames to shorter names.
 				String[] parts = title.split("-");
 				titleDisp = parts[2].substring(1, parts[2].length() - 1);
 				for(int i = 0;i<titleDisp.length();i++){
@@ -291,11 +288,11 @@ public class FragmentITSL extends Fragment implements
 	            new ViewPager.SimpleOnPageChangeListener() {
 	                @Override
 	                public void onPageSelected(int position) {
-	      //              actionBar.setSelectedNavigationItem(position);
+
 	                }
 	            });
 
-
+		// Here we edit the properties for the tabs. 
 		listPagerAdapter = new ListPagerAdapter(getActivity().getSupportFragmentManager(), createFragments());
 		mViewPager.setAdapter(listPagerAdapter);
 		pagerTabStrip = (PagerTabStrip) rootView.findViewById(R.id.pager_tab_strip);
