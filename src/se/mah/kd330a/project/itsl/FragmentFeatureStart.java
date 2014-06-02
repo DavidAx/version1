@@ -22,7 +22,7 @@ public class FragmentFeatureStart extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
-		
+		    //Returns the startlayout, but this is not used in this version of the app.
 			rootView = (ViewGroup) inflater.inflate(R.layout.itsl_feeds_start, container, false);
 		
 			
