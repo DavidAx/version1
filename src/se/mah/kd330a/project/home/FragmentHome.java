@@ -60,8 +60,7 @@ public class FragmentHome extends Fragment implements FeedManager.FeedManagerDon
 	private boolean profileRegistered = false;
 	private FeedManager ITSLfeedManager;
 	private String TAG ="FragmentHome";
-	//private Context ctx;
-	//ImageView img;
+
 	public FragmentHome()
 	{
 	}
@@ -92,33 +91,29 @@ public class FragmentHome extends Fragment implements FeedManager.FeedManagerDon
 		
 	}
 
-	//MyReceiver rec=new MyReceiver();
+
 	@Override
 	public void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
 
-		IntentFilter filter =new IntentFilter();
-		filter.addAction("se.mah.something");
-		//ctx.registerReceiver(rec, filter);
+
 	}
 	
 	@Override
 	public void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
-		//ctx.unregisterReceiver(rec);
+
 	}
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
 		
 		Log.i("FragmentHome", "OnCreateView: ");
-		//ctx= inflater.getContext();
 		rootView = (ViewGroup) inflater.inflate(R.layout.fragment_screen_home, container, false);
 		setNextKronoxClass(rootView);
 		setNewsFeedMah(rootView);
-		//img =(ImageView)rootView.findViewById(R.id.imgUpdate);
 		
 		ITSLfeedManager = new FeedManager(this, getActivity().getApplicationContext());
 		//ITSLfeedManager.getFeedList().size()
@@ -135,24 +130,7 @@ public class FragmentHome extends Fragment implements FeedManager.FeedManagerDon
 	// short amount of time. This code Recieves the broadcast we are doing in TimeAlarm and
 	// makes a toast to confirm the update. 
 	
-	// Here we want to receive the Broadcast we send in TimeAlarm and make a update on the
-	// home screen about the new update.
 	
-	/*
-	public class MyReceiver extends BroadcastReceiver {
-
-		   @Override
-		   public void onReceive(Context context, Intent intent) {
-		      Toast.makeText(context, "Intent Detected.", Toast.LENGTH_LONG).show();
-		      intent.getExtras();
-		      
-		      
-		      img.setVisibility(View.VISIBLE);
-		      
-		      
-		   }
-
-		}*/
 	
 	private void setNewsFeedMah(ViewGroup rootView)
 	{
