@@ -33,7 +33,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.app.FragmentTransaction;
-//sdsdsdsd
+
 public class FragmentITSL extends Fragment implements 
 	FeedManager.FeedManagerDoneListener, 
 	ActionBar.TabListener
@@ -103,8 +103,7 @@ public class FragmentITSL extends Fragment implements
 		AlarmManager alarm = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
 		alarm.cancel(backgroundUpdateIntent);
 		
-		/*if (feedManager.queueSize() > 0)
-			getActivity().getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);*/
+	
 	}
 	
 	public void onPause()
@@ -197,13 +196,7 @@ public class FragmentITSL extends Fragment implements
 			}
 		}
 		
-		//Adds the startscreen		
-//		TabFragment start;
-//		start = new TabFragment();
-//		start.setTitle("Start");
-//		start.setTitles(categories);
-//		fragments.add(start);
-		
+
 		
 		
 		
@@ -312,7 +305,7 @@ public class FragmentITSL extends Fragment implements
 		pagerTabStrip.setDrawFullUnderline(true);
 		
 		
-		//Toast.makeText(getActivity(), "" + articles.size() + " articles", Toast.LENGTH_LONG).show();
+		
 	}
 
 	private void refresh()
