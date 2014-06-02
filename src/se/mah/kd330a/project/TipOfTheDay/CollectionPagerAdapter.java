@@ -36,7 +36,7 @@ public class CollectionPagerAdapter extends FragmentStatePagerAdapter {
 
 	@Override
 	public int getCount() {
-		return 5;
+		return 4;
 	}
 
 	@Override
@@ -53,9 +53,7 @@ public class CollectionPagerAdapter extends FragmentStatePagerAdapter {
 		if(position==3){
 			return "MAH";
 		}
-		if(position==4){
-			return "Places";
-		}
+
 		else{
 		return "OBJECT " + (position + 1);
 		}
