@@ -20,18 +20,11 @@ public class ListPagerAdapter extends FragmentStatePagerAdapter
 	@Override
 	public Fragment getItem(int i)
 	{
-//		if(i==0){
-//			return new FragmentFeatureStart();
-//		}
+
 		if(i == fragmentList.size()-1){
 			return new HelpFragment();
 		}
-
-//		if (fragmentList.isEmpty() || fragmentList.size() < i)
-//		{
-//			Log.e(TAG, "Index out of bounds: " + Integer.toString(i));
-//			return null;
-//		}
+		
 		else
 		{
 			return fragmentList.get(i);
@@ -48,9 +41,7 @@ public class ListPagerAdapter extends FragmentStatePagerAdapter
 	
 	    @Override
 	    public CharSequence getPageTitle(int position) {
-//	        if(position==0){
-//	        	return"Start";
-//	        }
+
 
 	        if(position== fragmentList.size()-1){
 
