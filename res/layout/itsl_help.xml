@@ -32,15 +32,6 @@
                     android:textColor="@color/grey_dark" />
 
                 <ImageView
-                    android:id="@+id/divider_light"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_below="@id/tx_textMain"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:background="@color/grey_light" />
-
-                <ImageView
                     android:id="@+id/ImageView01"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
@@ -74,9 +65,9 @@
                     android:layout_height="2dp"
                     android:layout_below="@+id/imageView1"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="21dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
+                    android:layout_marginTop="21dp"
                     android:background="@color/grey_light" />
 
                 <TextView
@@ -91,23 +82,14 @@
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <ImageView
-                    android:id="@+id/imgUpdate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/imageView1"
-                    android:layout_below="@+id/textView2"
-                    android:layout_marginTop="9dp"
-                    android:src="@drawable/itsl_help_bookmm" />
-
-                <ImageView
                     android:id="@+id/divider_light6"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:layout_alignParentLeft="true"
                     android:layout_below="@+id/imgUpdate"
-                    android:layout_marginTop="22dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
+                    android:layout_marginTop="22dp"
                     android:background="@color/grey_light" />
 
                 <TextView
@@ -119,14 +101,6 @@
                     android:layout_marginTop="10dp"
                     android:text="4. Bookmark the page"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/imgUpdate"
-                    android:layout_alignParentBottom="true"
-                    android:src="@drawable/itsl_help_savee" />
 
                 <TextView
                     android:id="@+id/textView1"
@@ -149,27 +123,44 @@
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textColor="@color/grey_dark" />
 
+                <ImageView
+                    android:id="@+id/divider_light2"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/tx_textTwoo"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="9dp"
+                    android:background="@color/grey_light" />
+
                 <TextView
                     android:id="@+id/tx_titleTwo"
                     android:layout_width="wrap_content"
                     android:layout_height="46dp"
                     android:layout_alignLeft="@+id/tx_textTwoo"
-                    android:layout_below="@+id/divider_light"
+                    android:layout_alignTop="@+id/tx_textMain"
                     android:gravity="center_vertical"
                     android:text="1. Go to It&apos;s Learning"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/black" />
 
                 <ImageView
-                    android:id="@+id/divider_light2"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_alignLeft="@+id/divider_light"
-                    android:layout_below="@+id/tx_textTwoo"
-                    android:layout_marginTop="9dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:background="@color/grey_light" />
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/textView3"
+                    android:layout_below="@+id/textView3"
+                    android:layout_marginTop="18dp"
+                    android:src="@drawable/itsl_help_savee" />
+
+                <ImageView
+                    android:id="@+id/imgUpdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/textView3"
+                    android:layout_below="@+id/textView2"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/itsl_help_bookmm" />
 
             </RelativeLayout>
 
