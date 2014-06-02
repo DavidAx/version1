@@ -50,16 +50,7 @@ public class TabFragment extends Fragment implements OnChildClickListener
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
 		View rootView;
-		if(title.equals("Start")){
-			Log.i("Hej", "hejhejhej");
-			setRetainInstance(true);
-			rootView = inflater.inflate(R.layout.itsl_feeds_start, container, false);
-			startListAdapter = (ListAdapter) new newListAdapter(getActivity(), categories);
-			listView = (ListView) rootView.findViewById(R.id.startList);
-			listView.setAdapter(startListAdapter);
-			listView.setOnClickListener((OnClickListener) this);
-		}
-		else{
+
 			// don't destroy fragment when orientation changes
 			setRetainInstance(true);
 			rootView = inflater.inflate(R.layout.itsl_fragment_main, container, false);
@@ -68,7 +59,7 @@ public class TabFragment extends Fragment implements OnChildClickListener
 			expListView.setAdapter(listAdapter);
 			listAdapter.notifyDataSetChanged();
 			expListView.setOnChildClickListener(this);
-		}
+
 		return rootView;
 	}
 
