@@ -60,7 +60,7 @@ public class TimeAlarm extends IntentService implements FeedManager.FeedManagerD
 			
 			if (newArticles.size() > 0){
 				createNotification(newArticles);
-				//broadcastArticles(newArticles);
+				
 			}
 		}
 	}

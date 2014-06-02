@@ -177,7 +177,7 @@ public class FeedManager implements FeedDownloadTask.FeedCompleteListener
 		if (feedList.isEmpty())
 		{
 			Log.i(TAG, "Feed list is empty, adding some feeds:");
-			//addFeedURL("http://www.mah.se/rss/nyheter");
+		
 		}
 
 		/*
